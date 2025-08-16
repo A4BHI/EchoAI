@@ -33,7 +33,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(credsjson)
 		hashed, err := bcrypt.GenerateFromPassword([]byte(credsjson.Password), 12)
 		if err != nil {
-			fmt.Println("Error Hashing Password:", err)
+			fmt.Println("Error Hashing pswd:", err)
 		}
 
 		conn, err := db.Connectdb()
