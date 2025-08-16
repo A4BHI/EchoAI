@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0%;
+      }
+      body {
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        display: flex;
+      }
+      .main {
+        width: 900px;
+        border-radius: 12px;
+        height: 490px;
+        border: 2px solid red;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .logo {
+        width: 50%;
+        position: relative;
+      }
+
+      .inputs {
+        border: 2px solid rebeccapurple;
+        width: 40%;
+        margin-right: 45px;
+        height: 90%;
+        margin-top: 25px;
+        border-radius: 24px;
+      }
+      .logo img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        display: block;
+      }
+      .logo p {
+        position: absolute;
+      }
+    </style>
+    <div class="main">
+      <div class="logo">
+        <img src="logo1.png" />
+        <p>CAption test</p>
+      </div>
+      <div class="inputs">
+        <div class="img"></div>
+        <div class="creds"></div>
+        <div class="extras"></div>
+      </div>
+    </div>
+  </body>
+</html>

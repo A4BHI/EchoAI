@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/login.css">
+
+    <title>Login</title>
+  
+  </head>
+  <body>
+    <div class="main">
+      <div class="inputs">
+        <div class="img">
+          <img src="assets/logo1.png" alt="image" />
+          <h3>Welcome Back!!</h3>
+        </div>
+        <form method="POST" onsubmit="login(event)">
+          <div class="creds">
+            <div class="input-group">
+        <input type='text' required id='username' class='user' />
+        <label htmlFor="username">Username</label>
+      </div>
+      <div class="input-group">
+        <input type="password" required id='password' class='pass' />
+        <label htmlFor='password'>Password</label>
+      </div>
+          </div>
+
+          <div class="extras">
+            <a href="#">Forgot Password</a>
+            <a href="#">Register Now</a>
+          </div>
+
+          <div class="loginbutton">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+       async function login(e){
+  e.preventDefault();
+  console.log("TEST")
+  let username = document.getElementById("username").value
+  let password = document.getElementById("password").value
+  try{
+     let response =await fetch("/login",{
+     method : "POST",
+     headers : {"content-type":"application/json"},
+     body : JSON.stringify({
+      "username": username,
+      "password" :password
+     })
+  })
+  if (!response.ok) {
+  console.error("Server responded with error status:", response.status)
+  return;
+  } 
+  document.getElementById("username").value=""
+  document.getElementById("password").value=""
+  
+
+  
+
+  console.log("response received",response)
+  let data=await response.json()
+  console.log(data)
+  }catch(error){console.log(error)}
+ 
+}
+    </script>
+   
+  </body>
+</html>

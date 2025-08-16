@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ body{
+    font-family: 'Poppins', sans-serif;
+    background: #1a1a2e url('https://images.unsplash.com/photo-1597733336794-12d05021d510?q=80&w=2574&auto=format&fit=crop')  center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+  }
+
+  .main {
+    width: 420px;
+    height: auto;
+    border-radius: 20px;
+    padding: 20px;
+    
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .inputs {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    border: 2px solid #7b2cbf;
+     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  /* --- Logo Component --- */
+  .img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+  }
+
+  .img h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #f0f0f0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+
+  /* --- Form & Creds Components --- */
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .creds {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+
+  .creds label {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .creds input {
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+    padding-bottom: 0;
+   padding-top: 10px;
+  }
+
+  .creds input:focus,
+  .creds input:valid {
+    border-bottom-color: #a259ff;
+  }
+
+  .creds input:focus + label,
+  .creds input:valid + label {
+    top: -5px;
+    left: 0;
+   padding-bottom: 0;
+   padding-top: 10px;
+    font-size: 1rem;
+    color: #a259ff;
+   
+    padding: 0 5px;
+  }
+
+
+
+  .extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+  }
+
+  .extras a {
+    color: #c77dff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .extras a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .loginbutton {
+    margin-top: 10px;
+  }
+
+  .loginbutton button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #7b2cbf, #9d4edd);
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .loginbutton button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(157, 78, 221, 0.4);
+  }
