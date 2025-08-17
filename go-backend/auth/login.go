@@ -42,9 +42,10 @@ func Checklog(username string, inputedpass string) bool {
 }
 func setCookies(sessionid string, username string, w http.ResponseWriter) {
 	http.SetCookie(w, &http.Cookie{
-		Name:     username,
+		Name:     "sessionid",
 		Value:    sessionid,
 		HttpOnly: true,
+		Path:     "/",
 		Expires:  time.Now().Add(time.Minute * 30),
 	})
 
