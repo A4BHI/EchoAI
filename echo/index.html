@@ -48,10 +48,13 @@
           
         })
         let data=await response.text()
+        if(data=="Success"){
+          window.location.replace("/chat.html")
+        }
         console.log(data)
       }
-       async function login(e){
-  e.preventDefault();
+      async function login(e){
+        e.preventDefault();
   console.log("TEST")
   let username = document.getElementById("username").value
   let password = document.getElementById("password").value
@@ -72,9 +75,6 @@
   document.getElementById("password").value=""
   
 
-  
-
-  console.log("response received",response)
   let data=await response.json()
   console.log(data)
   }catch(error){console.log(error)}
