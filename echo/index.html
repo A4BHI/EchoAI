@@ -39,6 +39,17 @@
       </div>
     </div>
     <script>
+
+      window.onload=checker
+      async function checker(){
+        let response = await fetch("/checksession",{
+          method:"POST",
+          credentials:"include"
+          
+        })
+        let data=await response.text()
+        console.log(data)
+      }
        async function login(e){
   e.preventDefault();
   console.log("TEST")

@@ -8,6 +8,7 @@ import (
 )
 
 func CleanSession() {
+
 	var sessionids []string
 	conn, err := db.Connectdb()
 	if err != nil {
@@ -24,7 +25,7 @@ func CleanSession() {
 		var sessionid string
 		rows.Scan(&expiry_time, &sessionid)
 
-		if expiry_time.Before(time.Now()) {
+		if expiry_time.Before(time.Now().UTC()) {
 			sessionids = append(sessionids, sessionid)
 		}
 	}

@@ -26,8 +26,8 @@ func Check(w http.ResponseWriter, r *http.Request) {
 		}
 		var expiry time.Time
 		conn.QueryRow(context.Background(), "select expiry_time from sessions where sessionid=$1", sessionid).Scan(expiry)
-
-		if expiry.After(time.Now()) {
+		fmt.Print(expiry)
+		if expiry.After(time.Now().UTC()) {
 			fmt.Fprintf(w, "Success")
 		} else {
 			fmt.Fprintf(w, "fail")
