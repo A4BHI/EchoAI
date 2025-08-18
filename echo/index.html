@@ -42,6 +42,7 @@
 
       window.onload=checker
       async function checker(){
+        // if (window.cookieStore.get('sessionid')) location.pathname = '/chat.html';
         let response = await fetch("/checksession",{
           method:"POST",
           credentials:"include"
@@ -77,6 +78,8 @@
 
   let data=await response.json()
   console.log(data)
+  
+      location.pathname = '/login'
   }catch(error){console.log(error)}
  
 }
