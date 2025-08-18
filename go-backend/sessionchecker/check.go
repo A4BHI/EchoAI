@@ -28,6 +28,8 @@ func Check(w http.ResponseWriter, r *http.Request) {
 
 		if expiry.After(time.Now().UTC()) {
 			fmt.Fprintf(w, "Success")
+		} else {
+			fmt.Fprint(w, "fail")
 		}
 	}
 
